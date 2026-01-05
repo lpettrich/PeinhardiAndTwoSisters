@@ -37,8 +37,8 @@ awk '
 BEGIN {
   OFS = "\t";
   # Assign simple color names to each assembly ID
-  color["8602204.draft.softmasked"] = "230,159,0";
-  color["pap2229.draft.softmasked"] = "86,180,233";
+  color["wwl115.draft.softmasked"] = "230,159,0";
+  color["wwl072.draft.softmasked"] = "86,180,233";
   color["es5.curated"] = "204,121,167";
 
   while ((getline < "'$OUTDIR'/contig_assembly_map.tsv") > 0) {
@@ -70,9 +70,9 @@ BEGIN {
 # === STEP 3: Generate links.txt for each PAF and split by assembly pairs ===
 echo "Generating links files for each PAF..."
 
-> 8602204_ES5_links.txt
-> 8602204_PAP2229_links.txt
-> ES5_PAP2229_links.txt
+> wwl115_ES5_links.txt
+> wwl115_wwl072_links.txt
+> ES5_wwl072_links.txt
 
 for PAF in *.paf; do
   echo "Processing $PAF ..."
@@ -97,8 +97,8 @@ for PAF in *.paf; do
     if (qasm == tasm) next;
 
     # Explicit map from full asm names to short uppercase names
-    asm_map["8602204.draft.softmasked"] = "8602204";
-    asm_map["pap2229.draft.softmasked"] = "PAP2229";
+    asm_map["wwl115.draft.softmasked"] = "wwl115";
+    asm_map["wwl072.draft.softmasked"] = "wwl072";
     asm_map["es5.curated"] = "ES5";
 
     qasm_short = (qasm in asm_map) ? asm_map[qasm] : qasm;
@@ -155,7 +155,7 @@ karyotype = karyotype_noscf.txt
 
 <links>
 <link>
-  file            = 8602204_ES5_links.txt
+  file            = wwl115_ES5_links.txt
   color           = 230,159,0,0.2     # transparent red
   thickness       = 1
   radius          = 0.9r
@@ -163,7 +163,7 @@ karyotype = karyotype_noscf.txt
 </link>
 
 <link>
-  file            = 8602204_PAP2229_links.txt
+  file            = wwl115_wwl072_links.txt
   color           = 86,180,233,0.2    # transparent blue
   thickness       = 1
   radius          = 0.9r
@@ -171,7 +171,7 @@ karyotype = karyotype_noscf.txt
 </link>
 
 <link>
-  file            = ES5_PAP2229_links.txt
+  file            = ES5_wwl072_links.txt
   color           = 204,121,167,0.2   # transparent purple
   thickness       = 1
   radius          = 0.9r

@@ -17,25 +17,25 @@ module load bio/minimap2/2.28-GCCcore-13.2.0
 
 OUTDIR=/projects/ag-waldvogel/CRC1211/PanasGenomeReport/05_assembly-stats/05_circos_new_251008
 
-ASM1=/home/lpettric/genomes/8602204/8602204.draft.softmasked.fasta
-ASM2=/home/lpettric/genomes/PAP2229/pap2229.draft.softmasked.fasta
+ASM1=/home/lpettric/genomes/wwl115/wwl115.draft.softmasked.fasta
+ASM2=/home/lpettric/genomes/wwl072/wwl072.draft.softmasked.fasta
 ASM3=/home/lpettric/genomes/ES5/es5.curated.fasta
 
-PAF=$OUTDIR/8602204_PAP2229_ES5_minimap2_asm10.paf
+PAF=$OUTDIR/wwl115_wwl072_ES5_minimap2_asm10.paf
 
 
 cd $OUTDIR
 
-PAF=$OUTDIR/8602204_PAP2229_ES5_minimap2_asm10.paf
+PAF=$OUTDIR/wwl115_wwl072_ES5_minimap2_asm10.paf
 minimap2 -x asm10 $ASM1 $ASM2 $ASM3 > $PAF
 
-PAF=$OUTDIR/8602204_PAP2229_minimap2_asm10.paf
+PAF=$OUTDIR/wwl115_wwl072_minimap2_asm10.paf
 minimap2 -x asm10 $ASM1 $ASM2 > $PAF
 
-PAF=$OUTDIR/8602204_ES5_minimap2_asm10.paf
+PAF=$OUTDIR/wwl115_ES5_minimap2_asm10.paf
 minimap2 -x asm10 $ASM1 $ASM3 > $PAF
 
-PAF=$OUTDIR/PAP2229_ES5_minimap2_asm10.paf
+PAF=$OUTDIR/wwl072_ES5_minimap2_asm10.paf
 minimap2 -x asm10 $ASM2 $ASM3 > $PAF
 
 
