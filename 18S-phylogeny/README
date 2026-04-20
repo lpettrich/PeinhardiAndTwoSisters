@@ -1,0 +1,8 @@
+Filter for a minimum length of 500 bp.
+
+Aligned with AliView. Tree build with this alignment.
+
+
+Panagrolaimus davidi: 18S sequence is a 100% match to Paenbacillus sp. in blastn.
+Need to extract 18S differently:
+--> Blast against closest relative
