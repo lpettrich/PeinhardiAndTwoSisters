@@ -5,11 +5,7 @@
 #SBATCH --time=25:00:00
 #SBATCH --account=ag-waldvogel
 #SBATCH --job-name=pmapthreegenomes
-#SBATCH --error /scratch/lpettric/jobs/%x-%N-%j.err
-#SBATCH --output /scratch/lpettric/jobs/%x-%N-%j.out
-#SBATCH --mail-type=END
-#SBATCH --mail-type=FAIL
-#SBATCH --mail-user=lpettric@smail.uni-koeln.de
+
 
 module purge
 module load bio/minimap2/2.28-GCCcore-13.2.0
